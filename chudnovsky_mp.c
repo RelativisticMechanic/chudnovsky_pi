@@ -122,16 +122,14 @@ void chudnovskyMP(uint64_t a, uint64_t b, ChudnovskyResult* out)
 
             // Free the right operand because it is now absorbed
             chudnovskyResultDealloc(&partials[i + skip]);
-
-            // Optional safety: re-init the cleared slot to identity,
-            // so accidental reuse won’t crash.
-            // chudnovskyResultAlloc(&partials[i + skip]);
-            // setChudnovskyIdentity(&partials[i + skip]);
         }
 
         skip *= 2;
     }
 
-
     setChudnovsky2Chudnovsky(out, &partials[0]);
+
+    free(as);
+    free(bs);
+    free(partials);
 }
