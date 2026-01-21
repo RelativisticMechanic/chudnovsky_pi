@@ -1,19 +1,5 @@
 #include "chudnovsky.h"
 
-void chudnovskyResultAlloc(ChudnovskyResult* r)
-{
-    mpz_init(r->P);
-    mpz_init(r->Q);
-    mpz_init(r->T);
-}
-
-void chudnovskyResultDealloc(ChudnovskyResult* r)
-{
-    mpz_clear(r->P);
-    mpz_clear(r->Q);
-    mpz_clear(r->T);
-}
-
 void chudnovskyBS(uint64_t a, uint64_t b, ChudnovskyResult* out) {
 
     if (b - a == 1) {

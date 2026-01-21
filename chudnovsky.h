@@ -26,6 +26,21 @@ static inline void setMpzToU64(mpz_t a, uint64_t v)
     mpz_set_ui(a, (unsigned long)v);
 } 
 
+static inline void chudnovskyResultAlloc(ChudnovskyResult* r)
+{
+    mpz_init(r->P);
+    mpz_init(r->Q);
+    mpz_init(r->T);
+}
+
+static inline void chudnovskyResultDealloc(ChudnovskyResult* r)
+{
+    mpz_clear(r->P);
+    mpz_clear(r->Q);
+    mpz_clear(r->T);
+}
+
+
 static inline void setChudnovskyIdentity(ChudnovskyResult* out) {
     setMpzToU64(out->P, 1);
     setMpzToU64(out->Q, 1);
