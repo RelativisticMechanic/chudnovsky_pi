@@ -2,6 +2,7 @@
 #define CHUDNOVSKY_H
 
 #include <stdint.h>
+#include <math.h>
 #include <gmp.h>
 
 #ifdef _OPENMP
@@ -62,4 +63,6 @@ void chudnovskyMerge(const ChudnovskyResult* L, const ChudnovskyResult* R, Chudn
 
 void chudnovskyOpenMPInit(void);
 void chudnovskyMP(uint64_t a, uint64_t b, ChudnovskyResult* out);
+
+void chudnovskyCalculatePi(uint64_t n_digits);
 #endif

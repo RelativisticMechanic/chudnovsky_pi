@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "pi.h"
+#include "chudnovsky.h"
 
 void chudnovskyCalculatePi(uint64_t n_digits) {
     chudnovskyOpenMPInit();

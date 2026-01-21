@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "pi.h"
+#include "chudnovsky.h"
 
 
 int main(int argc, char** argv)
